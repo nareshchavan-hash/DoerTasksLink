@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Superb Realty – Doer Tasks Presentation</title>
+<style>
+  /* ═══════════════════════════════════════════
+     SUPERB REALTY – DOER TASKS PRESENTATION
+     FULLSCREEN HD EDITION (1920×1080)
+     ═══════════════════════════════════════════ */
+
+  :root {
+    --navy:      #472366;
+    --dark-navy: #0F1A30;
+    --gold:      #C8962E;
+    --gold-light:#F5E6C8;
+    --white:     #FFFFFF;
+    --off-white: #F8F9FA;
+    --text-dark: #333333;
+    --gray-line: #E0E0E0;
+    --ph-bg:     #E8E8E8;
+    --ph-text:   #888888;
+    --green:     #28A745;
+    --amber:     #FFB300;
+    --red:       #E83E3E;
+    --tbl-alt:   #F0F4F8;
+    --slide-w:   1920px;
+    --slide-h:   1080px;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    font-family: 'Segoe UI', Calibri, Arial, sans-serif;
+    background: #0a0a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* ── Slide Container – scales to fit viewport ── */
+  .deck-wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .deck {
+    width: var(--slide-w);
+    height: var(--slide-h);
+    position: relative;
+    box-shadow: 0 30px 100px rgba(0,0,0,0.6);
+    border-radius: 0;
+    overflow: hidden;
+    transform-origin: center center;
+  }
+
+  .slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--white);
+    flex-direction: column;
+    animation: fadeIn 0.5s ease;
+  }
+
+  .slide.active {
+    display: flex;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* ── Header ── */
+  .slide-header {
+    background: var(--navy);
+    padding: 24px 60px 20px;
+    border-bottom: 6px solid var(--gold);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .header-logo {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+
+  .slide-header h2 {
+    color: var(--white);
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .badge {
+    background: var(--gold);
+    color: var(--dark-navy);
+    padding: 10px 36px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    flex-shrink: 0;
+  }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background: var(--dark-navy);
+    padding: 14px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    font-size: 16px;
+    border-top: 3px solid rgba(200,150,46,0.3);
+  }
+
+  .slide-footer .brand {
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  .slide-footer .conf {
+    color: #777;
+  }
+
+  /* ── Content Area ── */
+  .content {
+    flex: 1;
+    display: flex;
+    padding: 36px 48px;
+    gap: 40px;
+    overflow: hidden;
+  }
+
+  .left-panel {
+    width: 720px;
+    flex-shrink: 0;
+    background: var(--off-white);
+    border: 2px solid var(--gray-line);
+    border-radius: 16px;
+    padding: 36px 40px;
+    overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  }
+
+  .right-panel {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+  }
+
+  /* ── Image Placeholder ── */
+  .img-placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--ph-bg);
+    border: 3px dashed #bbb;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ph-text);
+    font-size: 28px;
+    font-style: italic;
+    overflow: hidden;
+  }
+
+  .img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 14px;
+  }
+
+  /* ── Section titles ── */
+  .section-title {
+    color: var(--navy);
+    font-size: 26px;
+    font-weight: 700;
+    margin: 28px 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 2px solid var(--gold-light);
+    padding-bottom: 8px;
+  }
+
+  .section-title:first-child {
+    margin-top: 0;
+  }
+
+  .section-title .icon {
+    font-size: 28px;
+  }
+
+  /* ── Bullet Lists ── */
+  .bullet-list {
+    list-style: none;
+    padding-left: 12px;
+  }
+
+  .bullet-list li {
+    font-size: 21px;
+    color: var(--text-dark);
+    padding: 7px 0;
+    line-height: 1.6;
+  }
+
+  .bullet-list li::before {
+    content: "▸";
+    color: var(--gold);
+    font-weight: bold;
+    margin-right: 14px;
+    font-size: 22px;
+  }
+
+  /* ── Color Legend ── */
+  .color-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 10px;
+    padding-left: 4px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 21px;
+    color: var(--text-dark);
+  }
+
+  .legend-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+
+  /* ── Metric Cards ── */
+  .metric-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 14px;
+  }
+
+  .metric-card {
+    padding: 24px 16px;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    transition: transform 0.2s;
+  }
+
+  .metric-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .metric-card .m-title {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .metric-card .m-sub {
+    font-size: 16px;
+    opacity: 0.85;
+    margin-top: 6px;
+  }
+
+  /* ═══════════════════════════════════════
+     SLIDE 1 – TITLE SLIDE
+     ═══════════════════════════════════════ */
+  .title-slide {
+    background: var(--navy);
+    background-image:
+      radial-gradient(ellipse at 20% 80%, rgba(200,150,46,0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(200,150,46,0.06) 0%, transparent 50%);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+  }
+
+  .title-slide::before,
+  .title-slide::after {
+    content: '';
+    position: absolute;
+    background: var(--gold);
+  }
+
+  .title-slide::before {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+  }
+
+  .title-slide::after {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+  }
+
+  .title-border-l,
+  .title-border-r {
+    position: absolute;
+    top: 0;
+    width: 6px;
+    height: 100%;
+    background: var(--gold);
+  }
+
+  .title-border-l {
+    left: 0;
+  }
+
+  .title-border-r {
+    right: 0;
+  }
+
+  .title-content {
+    z-index: 1;
+    width: 100%;
+    padding: 0 120px;
+  }
+
+  .title-logo {
+    width: 140px;
+    height: auto;
+    margin-bottom: 24px;
+    border-radius: 12px;
+    box-shadow: 0 6px 30px rgba(200,150,46,0.3);
+  }
+
+  .title-content h1 {
+    font-size: 86px;
+    color: var(--gold);
+    letter-spacing: 8px;
+    margin-bottom: 12px;
+    text-shadow: 0 4px 20px rgba(200,150,46,0.3);
+  }
+
+  .title-content .subtitle {
+    font-size: 40px;
+    color: var(--white);
+    font-weight: 300;
+    margin-bottom: 32px;
+    opacity: 0.9;
+  }
+
+  .gold-line {
+    width: 400px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 auto 48px;
+    border-radius: 2px;
+  }
+
+  .info-box {
+    background: var(--dark-navy);
+    border: 2px solid var(--gold);
+    border-radius: 20px;
+    padding: 44px 60px;
+    text-align: left;
+    margin: 0 80px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  }
+
+  .info-box h3 {
+    color: var(--gold);
+    font-size: 30px;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+  }
+
+  .info-box ul {
+    list-style: none;
+  }
+
+  .info-box ul li {
+    color: var(--white);
+    font-size: 22px;
+    padding: 8px 0;
+    line-height: 1.7;
+  }
+
+  .info-box ul li::before {
+    content: "▸";
+    color: var(--gold);
+    font-weight: bold;
+    margin-right: 16px;
+    font-size: 22px;
+  }
+
+  .module-badges {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 48px;
+  }
+
+  .module-badges span {
+    background: var(--gold);
+    color: var(--dark-navy);
+    padding: 14px 48px;
+    border-radius: 30px;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 16px rgba(200,150,46,0.4);
+    transition: transform 0.2s;
+  }
+
+  .module-badges span:hover {
+    transform: translateY(-3px);
+  }
+
+  /* ═══════════════════════════════════════
+     SLIDE 11 – SUMMARY TABLE
+     ═══════════════════════════════════════ */
+  .summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+
+  .summary-table th {
+    background: var(--navy);
+    color: white;
+    padding: 22px 28px;
+    font-weight: 700;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.1);
+    font-size: 22px;
+  }
+
+  .summary-table td {
+    padding: 18px 28px;
+    text-align: center;
+    border: 1px solid var(--gray-line);
+    color: var(--text-dark);
+    font-size: 19px;
+  }
+
+  .summary-table tr:nth-child(even) td {
+    background: var(--tbl-alt);
+  }
+
+  .summary-table tr:hover td {
+    background: var(--gold-light);
+    transition: background 0.2s;
+  }
+
+  .summary-table td:first-child {
+    text-align: left;
+    font-weight: 700;
+    color: var(--navy);
+    font-size: 20px;
+  }
+
+  .check {
+    color: var(--green);
+  }
+
+  /* ═══════════════════════════════════════
+     NAVIGATION – PREV | PAGE | NEXT ONLY
+     ═══════════════════════════════════════ */
+  .nav-controls {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(15,26,48,0.94);
+    padding: 16px 48px;
+    border-radius: 50px;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(200,150,46,0.35);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+  }
+
+  .nav-btn {
+    background: transparent;
+    color: var(--gold);
+    border: 2px solid var(--gold);
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    font-size: 26px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s;
+    user-select: none;
+    outline: none;
+  }
+
+  .nav-btn:hover {
+    background: var(--gold);
+    color: var(--dark-navy);
+    transform: scale(1.12);
+    box-shadow: 0 4px 20px rgba(200,150,46,0.4);
+  }
+
+  .nav-btn:active {
+    transform: scale(0.95);
+  }
+
+  .nav-btn:disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  .slide-counter {
+    color: var(--gold);
+    font-size: 24px;
+    font-weight: 700;
+    min-width: 110px;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+
+  /* ── Progress Bar ── */
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--gold), #e8b84e);
+    z-index: 1001;
+    transition: width 0.4s ease;
+    border-radius: 0 2px 2px 0;
+  }
+
+  /* ── Scrollbar styling for panels ── */
+  .left-panel::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .left-panel::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .left-panel::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 3px;
+  }
+
+  /* ── Print / PDF ── */
+  @media print {
+    body {
+      background: white !important;
+    }
+
+    .nav-controls,
+    .progress-bar {
+      display: none !important;
+    }
+
+    .deck-wrapper {
+      width: 100%;
+      height: auto;
+    }
+
+    .deck {
+      width: 100% !important;
+      height: auto !important;
+      transform: none !important;
+      position: relative !important;
+      box-shadow: none !important;
+    }
+
+    .slide {
+      display: flex !important;
+      position: relative !important;
+      page-break-after: always;
+      height: 100vh !important;
+      min-height: 700px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── Progress Bar ── -->
+<div class="progress-bar" id="progressBar" style="width: 9.09%"></div>
+
+<!-- ── Deck Wrapper ── -->
+<div class="deck-wrapper">
+<div class="deck" id="deck">
+
+  <!-- ═══════════════════════════════════════
+       SLIDE 1: TITLE / INTRODUCTION
+       ═══════════════════════════════════════ -->
+  <div class="slide title-slide active" data-slide="1">
+    <div class="title-border-l"></div>
+    <div class="title-border-r"></div>
+    <div class="title-content">
+      <img src="https://i.postimg.cc/T1GMQcCk/logo-1.png" alt="Superb Realty Logo" class="title-logo">
+      <h1>SUPERB REALTY</h1>
+      <p class="subtitle">Doer Tasks – System Overview</p>
+      <div class="gold-line"></div>
+      <div class="info-box">
+        <h3>📧 How to Access the System</h3>
+        <ul>
+          <li>Users receive an email containing the access link</li>
+          <li>Link: https://sites.google.com/superbrealty.in/superbrealty?usp=sharing</li>
+          <li>Open the link → navigate to <strong>Doer Tasks</strong> → click <strong>Checklist</strong></li>
+          <li>Three modules available: <strong>Checklist</strong> | <strong>FMS</strong> | <strong>Delegation</strong></li>
+          <li>Each module offers three views: <strong>List</strong> · <strong>Calendar</strong> · <strong>Report</strong></li>
+        </ul>
+      </div>
+      <div class="module-badges">
+        <span>📋 CHECKLIST</span>
+        <span>🔧 FMS</span>
+        <span>📤 DELEGATION</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       SLIDE 2: CHECKLIST – LIST VIEW
+       ═══════════════════════════════════════ -->
+  <div class="slide" data-slide="2">
+    <div class="slide-header">
+      <div class="header-left">
+        <img src="https://i.postimg.cc/T1GMQcCk/logo-1.png" alt="Superb Realty Logo" class="header-logo">
+        <h2>Checklist Module – List View</h2>
+      </div>
+      <span class="badge">📋 CHECKLIST</span>
+    </div>
+    <div class="content">
+      <div class="left-panel">
+        <div class="section-title"><span class="icon">🔍</span> Filters Available</div>
+        <ul class="bullet-list">
+          <li>Start Date filter</li>
+          <li>End Date filter</li>
+          <li>Frequency / Priority filter</li>
+          <li>Task Name search</li>
+        </ul>
+        <div class="section-title"><span class="icon">📊</span> Task Summary Tiles</div>
+        <ul class="bullet-list">
+          <li>Total Tasks (Complete, Pending, Overdue counts)</li>
+          <li>Pending Tasks only</li>
+          <li>Completed Tasks only</li>
+          <li>Overdue Tasks only</li>
+        </ul>
+        <div class="section-title"><span class="icon">⚡</span> Task Submission Flow</div>
+        <ul class="bullet-list">
+          <li>Click a task → Google Form opens</li>
+          <li>Submit the form → task auto-updates</li>
+          <li>Status: Pending → Completed (~10 sec)</li>
+        </ul>
+      </div>
+      <div class="right-panel">
+        <div class="img-placeholder">
+          <img src="checklist-list.png" alt="Checklist List View" onerror="this.style.display='none';this.parentElement.innerHTML+='[Insert image: Checklist-List]'">
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand">Superb Realty – Doer Tasks System</span>
+      <span class="conf">Confidential</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       SLIDE 3: CHECKLIST – CALENDAR VIEW
+       ═══════════════════════════════════════ -->
+  <div class="slide" data-slide="3">
+    <div class="slide-header">
+      <div class="header-left">
+        <img src="https://i.postimg.cc/T1GMQcCk/logo-1.png" alt="Superb Realty Logo" class="header-logo">
+        <h2>Checklist Module – Calendar View</h2>
+      </div>
+      <span class="badge">📋 CHECKLIST</span>
+    </div>
+    <div class="content">
+      <div class="left-panel">
+        <div class="section-title"><span class="icon">📅</span> Calendar Overview</div>
+        <ul class="bullet-list">
+          <li>Tasks shown on a monthly calendar grid</li>
+          <li>Color-coded by status for easy scanning</li>
+          <li>Click any date to filter that day's tasks</li>
+        </ul>
+        <div class="section-title"><span class="icon">🎨</span> Color Coding</div>
+        <div class="color-legend">
+          <div class="legend-item">
+            <div class="legend-dot" style="background:var(--amber)"></div>
+            Pending – Awaiting completion
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background:var(--red)"></div>
+            Overdue – Past due date
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background:var(--green)"></div>
+            Done – Successfully completed
+          </div>
+        </div>
+        <div class="section-title"><span class="icon">💡</span> Interaction</div>
+        <ul class="bullet-list">
+          <li>Click a specific date → shows that day's tasks only</li>
+          <li>Visual overview of task distribution across the month</li>
+        </ul>
+      </div>
+      <div class="right-panel">
+        <div class="img-placeholder">
+          <img src="checklist-Calendar.png" alt="Checklist Calendar View" onerror="this.style.display='none';this.parentElement.innerHTML+='[Insert image: Checklist-Calendar]'">
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand">Superb Realty – Doer Tasks System</span>
+      <span class="conf">Confidential</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       SLIDE 4: CHECKLIST – REPORT VIEW
+       ═══════════════════════════════════════ -->
+  <div class="slide" data-slide="4">
+    <div class="slide-header">
+      <div class="header-left">
+        <img src="https://i.postimg.cc/T1GMQcCk/logo-1.png" alt="Superb Realty Logo" class="header-logo">
+        <h2>Checklist Module – Report View</h2>
+      </div>
+      <span class="badge">📋 CHECKLIST</span>
+    </div>
+    <div class="content">
+      <div class="left-panel">
+        <div class="section-title"><span class="icon">📈</span> Report Summary</div>
+        <ul class="bullet-list">
+          <li>Comprehensive task summary at a glance</li>
+          <li>Performance metrics for tracking productivity</li>
+          <li>Exportable data for management review</li>
+        </ul>
+        <div class="section-title"><span class="icon">📋</span> Metrics Displayed</div>
+        <div class="metric-grid">
+          <div class="metric-card" style="background:var(--navy)">
+            <div class="m-title">Total Tasks</div>
+            <div class="m-sub">All assigned tasks</div>
+          </div>
+          <div class="metric-card" style="background:var(--green)">
+            <div class="m-title">Completed</div>
+            <div class="m-sub">Successfully finished</div>
+          </div>
+          <div class="metric-card" style="background:var(--amber)">
+            <div class="m-title">Pending</div>
+            <div class="m-sub">Awaiting action</div>
+          </div>
+          <div class="metric-card" style="background:var(--red)">
+            <div class="m-title">Overdue</div>
+            <div class="m-sub">Past deadline</div>
+          </div>
+        </div>
+      </div>
+      <div class="right-panel">
+        <div class="img-placeholder">
+          <img src="checklist-Report.png" alt="Checklist Report View" onerror="this.style.display='none';this.parentElement.innerHTML+='[Insert image: Checklist-Report]'">
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand">Superb Realty – Doer Tasks System</span>
+      <span class="conf">Confidential</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       SLIDE 5: FMS – LIST VIEW
+       ═══════════════════════════════════════ -->
+  <div class="slide" data-slide="5">
+    <div class="slide-header">
+      <div class="header-left">
+        <img src="https://i.postimg.cc/T1GMQcCk/logo-1.png" alt="Superb Realty Logo" class="header-logo">
+        <h2>FMS Module – List View</h2>
+      </div>
+      <span class="badge">🔧 FMS</span>
+    </div>
+    <div class="content">
+      <div class="left-panel">
+        <div class="section-title"><span class="icon">🔍</span> Filters Available</div>
+        <ul class="bullet-list">
+          <li>Start Date filter</li>
+          <li>End Date filter</li>
+          <li>Frequency / Priority filter</li>
+          <li>Task Name search</li>
+        </ul>
+        <div class="section-title"><span class="icon">📊</span> Task Summary Tiles</div>
+        <ul class="bullet-list">
+          <li>Total Tasks (Complete, Pending, Overdue counts)</li>
+          <li>Pending Tasks only</li>
+          <li>Completed Tasks only</li>
+          <li>Overdue Tasks only</li>
+        </ul>
+        <div class="section-title"><span class="icon">⚡</span> Task Submission Flow</div>
+        <ul class="bullet-list">
+          <li>Click a task → Google Form opens</li>
+          <li>Submit the form → task auto-updates</li>
+          <li>Status: Pending → Completed (~10 sec)</li>
+        </ul>
+      </div>
+      <div class="right-panel">
+        <div class="img-placeholder">
+          <img src="FMS-List.png" alt="FMS List View" onerror="this.style.display='none';this.parentElement.innerHTML+='[Insert image: FMS-List]'">
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand">Superb Realty – Doer Tasks System</span>
+      <span class="conf">Confidential</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       SLIDE 6: FMS – CALENDAR VIEW
+       ═══════════════════════════════════════ -->
+  <div class="slide" data-slide="6">
+    <div class="slide-header">
+      <div class="header-left">
+        <img src="https://i.postimg.cc/T1GMQcCk/logo-1.png" alt="Superb Realty Logo" class="header-logo">
+        <h2>FMS Module – Calendar View</h2>
+      </div>
+      <span class="badge">🔧 FMS</span>
+    </div>
+    <div class="content">
+      <div class="left-panel">
+        <div class="section-title"><span class="icon">📅</span> Calendar Overview</div>
+        <ul class="bullet-list">
+          <li>Tasks shown on a monthly calendar grid</li>
+          <li>Color-coded by status for easy scanning</li>
+          <li>Click any date to filter that day's tasks</li>
+        </ul>
+        <div class="section-title"><span class="icon">🎨</span> Color Coding</div>
+        <div class="color-legend">
+          <div class="legend-item">
+            <div class="legend-dot" style="background:var(--amber)"></div>
+            Pending – Awaiting completion
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background:var(--red)"></div>
+            Overdue – Past due date
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background:var(--green)"></div>
+            Done – Successfully completed
+          </div>
+        </div>
+        <div class="section-title"><span class="icon">💡</span> Interaction</div>
+        <ul class="bullet-list">
+          <li>Click a specific date → shows that day's tasks only</li>
+          <li>Visual overview of task distribution across the month</li>
+        </ul>
+      </div>
+      <div class="right-panel">
+        <div class="img-placeholder">
+          <img src="FMS-Calendar.png" alt="FMS Calendar View" onerror="this.style.display='none';this.parentElement.innerHTML+='[Insert image: FMS-Calendar]'">
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand">Superb Realty – Doer Tasks System</span>
+      <span class="conf">Confidential</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       SLIDE 7: FMS – REPORT VIEW
+       ═══════════════════════════════════════ -->
+  <div class="slide" data-slide="7">
+    <div class="slide-header">
+      <div class="header-left">
+        <img src="https://i.postimg.cc/T1GMQcCk/logo-1.png" alt="Superb Realty Logo" class="header-logo">
+        <h2>FMS Module – Report View</h2>
+      </div>
+      <span class="badge">🔧 FMS</span>
+    </div>
+    <div class="content">
+      <div class="left-panel">
+        <div class="section-title"><span class="icon">📈</span> Report Summary</div>
+        <ul class="bullet-list">
+          <li>Comprehensive task summary at a glance</li>
+          <li>Performance metrics for tracking productivity</li>
+          <li>Exportable data for management review</li>
+        </ul>
+        <div class="section-title"><span class="icon">📋</span> Metrics Displayed</div>
+        <div class="metric-grid">
+          <div class="metric-card" style="background:var(--navy)">
+            <div class="m-title">Total Tasks</div>
+            <div class="m-sub">All assigned tasks</div>
+          </div>
+          <div class="metric-card" style="background:var(--green)">
+            <div class="m-title">Completed</div>
+            <div class="m-sub">Successfully finished</div>
+          </div>
+          <div class="metric-card" style="background:var(--amber)">
+            <div class="m-title">Pending</div>
+            <div class="m-sub">Awaiting action</div>
+          </div>
+          <div class="metric-card" style="background:var(--red)">
+            <div class="m-title">Overdue</div>
+            <div class="m-sub">Past deadline</div>
+          </div>
+        </div>
+      </div>
+      <div class="right-panel">
+        <div class="img-placeholder">
+          <img src="FMS-Report.png" alt="FMS Report View" onerror="this.style.display='none';this.parentElement.innerHTML+='[Insert image: FMS-Report]'">
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand">Superb Realty – Doer Tasks System</span>
+      <span class="conf">Confidential</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       SLIDE 8: DELEGATION – LIST VIEW
+       ═══════════════════════════════════════ -->
+  <div class="slide" data-slide="8">
+    <div class="slide-header">
+      <div class="header-left">
+        <img src="https://i.postimg.cc/T1GMQcCk/logo-1.png" alt="Superb Realty Logo" class="header-logo">
+        <h2>Delegation Module – List View</h2>
+      </div>
+      <span class="badge">📤 DELEGATION</span>
+    </div>
+    <div class="content">
+      <div class="left-panel">
+        <div class="section-title"><span class="icon">🔍</span> Filters Available</div>
+        <ul class="bullet-list">
+          <li>Start Date filter</li>
+          <li>End Date filter</li>
+          <li>Frequency / Priority filter</li>
+          <li>Task Name search</li>
+        </ul>
+        <div class="section-title"><span class="icon">📊</span> Task Summary Tiles</div>
+        <ul class="bullet-list">
+          <li>Total Tasks (Complete, Pending, Overdue counts)</li>
+          <li>Pending Tasks only</li>
+          <li>Completed Tasks only</li>
+          <li>Overdue Tasks only</li>
+        </ul>
+        <div class="section-title"><span class="icon">⚡</span> Task Submission Flow</div>
+        <ul class="bullet-list">
+          <li>Click a task → Google Form opens</li>
+          <li>Submit the form → task auto-updates</li>
+          <li>Status: Pending → Completed (~10 sec)</li>
+        </ul>
+      </div>
+      <div class="right-panel">
+        <div class="img-placeholder">
+          <img src="Delegation-List.png" alt="Delegation List View" onerror="this.style.display='none';this.parentElement.innerHTML+='[Insert image: Delegation-List]'">
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand">Superb Realty – Doer Tasks System</span>
+      <span class="conf">Confidential</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       SLIDE 9: DELEGATION – CALENDAR VIEW
+       ═══════════════════════════════════════ -->
+  <div class="slide" data-slide="9">
+    <div class="slide-header">
+      <div class="header-left">
+        <img src="https://i.postimg.cc/T1GMQcCk/logo-1.png" alt="Superb Realty Logo" class="header-logo">
+        <h2>Delegation Module – Calendar View</h2>
+      </div>
+      <span class="badge">📤 DELEGATION</span>
+    </div>
+    <div class="content">
+      <div class="left-panel">
+        <div class="section-title"><span class="icon">📅</span> Calendar Overview</div>
+        <ul class="bullet-list">
+          <li>Tasks shown on a monthly calendar grid</li>
+          <li>Color-coded by status for easy scanning</li>
+          <li>Click any date to filter that day's tasks</li>
+        </ul>
+        <div class="section-title"><span class="icon">🎨</span> Color Coding</div>
+        <div class="color-legend">
+          <div class="legend-item">
+            <div class="legend-dot" style="background:var(--amber)"></div>
+            Pending – Awaiting completion
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background:var(--red)"></div>
+            Overdue – Past due date
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background:var(--green)"></div>
+            Done – Successfully completed
+          </div>
+        </div>
+        <div class="section-title"><span class="icon">💡</span> Interaction</div>
+        <ul class="bullet-list">
+          <li>Click a specific date → shows that day's tasks only</li>
+          <li>Visual overview of task distribution across the month</li>
+        </ul>
+      </div>
+      <div class="right-panel">
+        <div class="img-placeholder">
+          <img src="Delegation-Calendar.png" alt="Delegation Calendar View" onerror="this.style.display='none';this.parentElement.innerHTML+='[Insert image: Delegation-Calendar]'">
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand">Superb Realty – Doer Tasks System</span>
+      <span class="conf">Confidential</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       SLIDE 10: DELEGATION – REPORT VIEW
+       ═══════════════════════════════════════ -->
+  <div class="slide" data-slide="10">
+    <div class="slide-header">
+      <div class="header-left">
+        <img src="https://i.postimg.cc/T1GMQcCk/logo-1.png" alt="Superb Realty Logo" class="header-logo">
+        <h2>Delegation Module – Report View</h2>
+      </div>
+      <span class="badge">📤 DELEGATION</span>
+    </div>
+    <div class="content">
+      <div class="left-panel">
+        <div class="section-title"><span class="icon">📈</span> Report Summary</div>
+        <ul class="bullet-list">
+          <li>Comprehensive task summary at a glance</li>
+          <li>Performance metrics for tracking productivity</li>
+          <li>Exportable data for management review</li>
+        </ul>
+        <div class="section-title"><span class="icon">📋</span> Metrics Displayed</div>
+        <div class="metric-grid">
+          <div class="metric-card" style="background:var(--navy)">
+            <div class="m-title">Total Tasks</div>
+            <div class="m-sub">All assigned tasks</div>
+          </div>
+          <div class="metric-card" style="background:var(--green)">
+            <div class="m-title">Completed</div>
+            <div class="m-sub">Successfully finished</div>
+          </div>
+          <div class="metric-card" style="background:var(--amber)">
+            <div class="m-title">Pending</div>
+            <div class="m-sub">Awaiting action</div>
+          </div>
+          <div class="metric-card" style="background:var(--red)">
+            <div class="m-title">Overdue</div>
+            <div class="m-sub">Past deadline</div>
+          </div>
+        </div>
+      </div>
+      <div class="right-panel">
+        <div class="img-placeholder">
+          <img src="Delegation-Report.png" alt="Delegation Report View" onerror="this.style.display='none';this.parentElement.innerHTML+='[Insert image: Delegation-Report]'">
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand">Superb Realty – Doer Tasks System</span>
+      <span class="conf">Confidential</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       SLIDE 11: SUMMARY COMPARISON TABLE
+       ═══════════════════════════════════════ -->
+  <div class="slide" data-slide="11">
+    <div class="slide-header">
+      <div class="header-left">
+        <img src="https://i.postimg.cc/T1GMQcCk/logo-1.png" alt="Superb Realty Logo" class="header-logo">
+        <h2>Module Comparison – Summary</h2>
+      </div>
+      <span class="badge">📊 SUMMARY</span>
+    </div>
+    <div class="content" style="padding:36px 80px;">
+      <div style="width:100%;overflow-x:auto;">
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th style="width:220px;">Feature</th>
+              <th>📋 Checklist</th>
+              <th>🔧 FMS</th>
+              <th>📤 Delegation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>List View</td>
+              <td><span class="check">✅</span> Available</td>
+              <td><span class="check">✅</span> Available</td>
+              <td><span class="check">✅</span> Available</td>
+            </tr>
+            <tr>
+              <td>Calendar View</td>
+              <td><span class="check">✅</span> Available</td>
+              <td><span class="check">✅</span> Available</td>
+              <td><span class="check">✅</span> Available</td>
+            </tr>
+            <tr>
+              <td>Report View</td>
+              <td><span class="check">✅</span> Available</td>
+              <td><span class="check">✅</span> Available</td>
+              <td><span class="check">✅</span> Available</td>
+            </tr>
+            <tr>
+              <td>Filters</td>
+              <td>Date, Priority, Search</td>
+              <td>Date, Priority, Search</td>
+              <td>Date, Priority, Search</td>
+            </tr>
+            <tr>
+              <td>Summary Tiles</td>
+              <td>Total, Pending, Done, Overdue</td>
+              <td>Total, Pending, Done, Overdue</td>
+              <td>Total, Pending, Done, Overdue</td>
+            </tr>
+            <tr>
+              <td>Task Form</td>
+              <td>Google Form</td>
+              <td>Google Form</td>
+              <td>Google Form</td>
+            </tr>
+            <tr>
+              <td>Auto-Update</td>
+              <td>~10 seconds</td>
+              <td>~10 seconds</td>
+              <td>~10 seconds</td>
+            </tr>
+            <tr>
+              <td>Color Coding</td>
+              <td>Pending, Overdue, Done</td>
+              <td>Pending, Overdue, Done</td>
+              <td>Pending, Overdue, Done</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand">Superb Realty – Doer Tasks System</span>
+      <span class="conf">Confidential</span>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     NAVIGATION: PREVIOUS | PAGE | NEXT
+     ═══════════════════════════════════════ -->
+<div class="nav-controls">
+  <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)" title="Previous (←)">◀</button>
+  <span class="slide-counter" id="counter">1 / 11</span>
+  <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)" title="Next (→)">▶</button>
+</div>
+
+<!-- ═══════════════════════════════════════
+     JAVASCRIPT – SLIDE ENGINE
+     ═══════════════════════════════════════ -->
+<script>
+  // ── State ──
+  var current = 1;
+  var total = 11;
+
+  // ── Update UI elements ──
+  function updateUI() {
+    // Update page counter text
+    document.getElementById('counter').textContent = current + ' / ' + total;
+
+    // Update progress bar width
+    document.getElementById('progressBar').style.width = ((current / total) * 100) + '%';
+
+    // Disable prev button on first slide
+    document.getElementById('prevBtn').disabled = (current === 1);
+
+    // Disable next button on last slide
+    document.getElementById('nextBtn').disabled = (current === total);
+  }
+
+  // ── Go to a specific slide ──
+  function goToSlide(n) {
+    // Boundary check
+    if (n < 1 || n > total || n === current) return;
+
+    // Hide current slide
+    var currentSlide = document.querySelector('.slide[data-slide="' + current + '"]');
+    if (currentSlide) {
+      currentSlide.classList.remove('active');
+    }
+
+    // Update current index
+    current = n;
+
+    // Show new slide
+    var newSlide = document.querySelector('.slide[data-slide="' + current + '"]');
+    if (newSlide) {
+      newSlide.classList.add('active');
+    }
+
+    // Refresh UI
+    updateUI();
+  }
+
+  // ── Change slide by direction (-1 or +1) ──
+  function changeSlide(dir) {
+    goToSlide(current + dir);
+  }
+
+  // ── Smart scaling to fit any viewport ──
+  function handleResize() {
+    var deck = document.getElementById('deck');
+    var vw = window.innerWidth;
+    var vh = window.innerHeight;
+
+    // Calculate scale to fit both width and height
+    var scaleX = vw / 1920;
+    var scaleY = vh / 1080;
+    var scale = Math.min(scaleX, scaleY);
+
+    // Apply transform
+    deck.style.transform = 'scale(' + scale + ')';
+    deck.style.transformOrigin = 'top left';
+    deck.style.position = 'absolute';
+
+    // Center the deck
+    deck.style.left = ((vw - 1920 * scale) / 2) + 'px';
+    deck.style.top = ((vh - 1080 * scale) / 2) + 'px';
+
+    // Ensure wrapper fills viewport
+    deck.parentElement.style.width = '100vw';
+    deck.parentElement.style.height = '100vh';
+  }
+
+  // ── Event Listeners ──
+
+  // Resize handler
+  window.addEventListener('resize', handleResize);
+
+  // Initial setup on page load
+  window.addEventListener('load', function() {
+    handleResize();
+    updateUI();
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', function(e) {
+    switch(e.key) {
+      case 'ArrowRight':
+      case 'ArrowDown':
+      case ' ':
+      case 'PageDown':
+        e.preventDefault();
+        changeSlide(1);
+        break;
+
+      case 'ArrowLeft':
+      case 'ArrowUp':
+      case 'PageUp':
+        e.preventDefault();
+        changeSlide(-1);
+        break;
+
+      case 'Home':
+        e.preventDefault();
+        goToSlide(1);
+        break;
+
+      case 'End':
+        e.preventDefault();
+        goToSlide(total);
+        break;
+    }
+  });
+
+  // ── Touch / Swipe support for mobile ──
+  var touchStartX = 0;
+  var touchStartY = 0;
+
+  document.addEventListener('touchstart', function(e) {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  }, { passive: true });
+
+  document.addEventListener('touchend', function(e) {
+    var dx = e.changedTouches[0].screenX - touchStartX;
+    var dy = e.changedTouches[0].screenY - touchStartY;
+
+    // Only register horizontal swipes longer than 60px
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 60) {
+      if (dx < 0) {
+        changeSlide(1);  // Swipe left = next
+      } else {
+        changeSlide(-1); // Swipe right = previous
+      }
+    }
+  }, { passive: true });
+</script>
+
+</body>
+</html>
